@@ -11,5 +11,22 @@ Python3 должен быть уже установлен. Затем испол
 ```
 pip install -r requirements.txt
 ```
+## Использование
+* Получаем подсказку
+```
+python main.py -h
+```
+* сокращаем ссылку https://www.google.com
+```
+python main.py https://www.google.com
+```
+* получаем количестов кликов по ссылке https://bit.ly/3Ia1fc5
+```
+python main.py https://bit.ly/3Ia1fc5
+```
+или
+```
+python main.py bit.ly/3Ia1fc5
+```
 ## Цель проекта
 Код написан в образовательных целях на онлайн-курсе для веб-разработчиков [dvmn.org](https://dvmn.org/).
