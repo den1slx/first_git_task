@@ -31,19 +31,6 @@ def remove_link_protocol(link):
     return redacted_link
 
 
-def is_link(link):
-    try:
-        requests.get(link)
-    except requests.exceptions.MissingSchema:
-        return False
-    except requests.exceptions.InvalidSchema:
-        return False
-    except requests.exceptions.InvalidURL:
-        return False
-    else:
-        return True
-
-
 def is_bitlink(link, token):
     headers = {'Authorization': f'Bearer {token}'}
     link = remove_link_protocol(link)
