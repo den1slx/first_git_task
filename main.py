@@ -64,16 +64,13 @@ def main():
     namespace = parser.parse_args()
     url = namespace.link
     try:
-        if is_link(url) or is_bitlink(url, token):
-            if is_bitlink(url, token):
-                parsed_bitlink = remove_link_protocol(url)
-                clicks = count_clicks(parsed_bitlink, token)
-                print(f'Количество кликов: {clicks}')
-            else:
-                bitlink = shorten_link(token, url)
-                print('bitlink:', bitlink)
+        if is_bitlink(url, token):
+            parsed_bitlink = remove_link_protocol(url)
+            clicks = count_clicks(parsed_bitlink, token)
+            print(f'Количество кликов: {clicks}')
         else:
-            print('Не ссылка или некорректная ссылка')
+            bitlink = shorten_link(token, url)
+            print('bitlink:', bitlink)
     except requests.exceptions.HTTPError:
         print('Некорректная ссылка ')
 
