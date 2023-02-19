@@ -27,13 +27,7 @@ def count_clicks(bitlink, token):
 
 def remove_link_protocol(link):
     parsed_link = urlparse(link)
-    redacted_link = ''
-    for link_component in parsed_link:
-        if link_component == parsed_link[0]:
-            continue
-        if parsed_link[0] == '' and parsed_link[1] == '' and 'bit.ly' in parsed_link[2]:
-            return link
-        redacted_link += link_component
+    redacted_link = f'{parsed_link.netloc}{parsed_link.path}'
     return redacted_link
 
 
